@@ -28,12 +28,12 @@ png("plot4.png",width=480,height=480)
 ## Define the device object as a 2x2 grid to display multiple charts
 par(mfcol=c(2,2))
 
-## Plot 2 Create the histogram chart (top left corner)
+## Plot 2 Create the line chart (top left corner)
 plot(DF$Global_active_power,type="l",ylab="Global Active Power",xlab=NA, xaxt = "n",cex.lab=0.95,cex.main=0.95,cex.axis=0.95)
 ## Add the x axis labels for the day of the week.
 axis(side = 1,at=c(1,1440,2880),labels=c("Thu","Fri","Sat"))
 
-## Plot 3 Create the plot chart (bottom right corner)
+## Plot 3 Create the multi-line chart (bottom right corner)
 plot(DF$Sub_metering_1,type="l",ylab="Energy sub metering",xlab=NA, xaxt = "n",col="black",cex.lab=0.95,cex.main=0.95,cex.axis=0.95)
 ## Add second line to chart
 lines(DF$Sub_metering_2,col="red")
@@ -44,14 +44,14 @@ legend("topright",legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),l
 ## Add the x axis labels for the day of the week.
 axis(side = 1,at=c(1,1440,2880),labels=c("Thu","Fri","Sat"))
 
-## Plot 5 Create the plot chart
+## Plot 5 Create the line chart (upper right corner)
 plot(DF$Voltage,type="l",ylab="Voltage",xlab="datetime", xaxt = "n",yaxt="n",col="black",cex.lab=0.95,cex.main=0.95,cex.axis=0.95)
 ## Add the y axis labels
 axis(side=2,at=c(234,236,238,240,242,244,246),labels=c("234","","238","","242","","246"))
 ## Add the x axis labels for the day of the week.
 axis(side = 1,at=c(1,1440,2880),labels=c("Thu","Fri","Sat"))
 
-## Plot 6 Create the chart
+## Plot 6 Create the line chart (lower right corner)
 plot(DF$Global_reactive_power,type="l",ylab="Global_reactive_powere",xlab="datetime", xaxt = "n",col="black",cex.lab=0.95,cex.main=0.95,cex.axis=0.95)
 ## Add the x axis labels for the day of the week.
 axis(side = 1,at=c(1,1440,2880),labels=c("Thu","Fri","Sat"))
